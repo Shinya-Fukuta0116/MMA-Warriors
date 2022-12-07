@@ -1,0 +1,185 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+  color: rgb(227, 225, 225);
+  font-family: 'Oswald', sans-serif;
+  height: 100%;
+  width: 100%;
+  background-image: url(./imgs/analysis.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+nav{
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  width: 100%;
+  z-index: 100000;
+}
+.logo{
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 35px;
+  position: relative;
+}
+
+.nav-links{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-links a{
+  position: relative;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav-links li{
+  position: relative;
+  list-style: none;
+}
+
+/* 画面を小さくした時出てくる */
+.burger{
+  position: relative;
+  display: none;
+  cursor: pointer;
+}
+
+.burger div{
+  position: relative;
+  width: 25px;
+  height: 3px;
+  background-color: rgb(227, 225, 225);
+  margin: 5px;
+  transition: transform 0.5s ease-in;
+}
+
+.title{
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  /* color: rgb(152, 151, 150); */
+  color: rgba(157, 102, 0, 0.666);
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  opacity: 1;
+  z-index: 1;
+}
+
+section{
+  position: relative; 
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+h2{
+  position: absolute;
+  font-size: 2.3rem;
+  top: 30%;
+  left: 5%;
+  z-index: 2;
+  letter-spacing: 2px;
+  opacity: 0.9;
+  transition: all 1s;
+}
+.img-wrap{
+  position: relative;
+  top: 40%;
+  left: 5%;
+  height: 40%;
+  width: 1px;
+  /* overflow: hidden; */
+  opacity: 0.8;
+}
+
+.section1 li{
+  position: relative;
+  list-style: none;
+  left: 20%;
+  margin: 10px;
+  font-size: 1.6em;
+}
+.section2 li{
+  position: relative;
+  list-style: none;
+  left: 20%;
+  margin: 10px;
+  font-size: 1.6em;
+}
+
+img{
+  height: 40vh;
+  width: 28vh;
+}
+
+
+/* Responsive */
+@media screen and (max-width:1024px){
+  .nav-links{
+    width: 60%;
+  }
+}
+@media screen and (max-width:1024px){
+  .nav-links{
+    width: 60%;
+  }
+}
+
+@media screen and (max-width:768px){
+  body{
+    overflow: hidden;
+  }
+  .nav-links{
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    /* speed of slide */
+    transition: transform 0.5s ease-in-out;
+  }
+  .nav-links li{
+    /* opacity of element */
+    opacity: 0;
+  }
+  .burger{
+    display: block;
+  }
+}
+
+/* When it's clicked */
+.nav-active{
+  transform: translateX(0%);
+}
